@@ -1,1 +1,3 @@
-pkey/
+pkey/*.*
+!pkey/
+!pkey/.gitignore
