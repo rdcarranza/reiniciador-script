@@ -1,12 +1,12 @@
 # reiniciador-script
 Script en Bash para el reinicio de servidores.
 
-##INSTRUCCIONES:
+## INSTRUCCIONES:
 1. Se debe crear un usuario de sistema "reiniciador" en cada servidor.
 
 sudo adduser --disabled-password reiniciador
 
-###se le asigna un password temporal a la cuenta reiniciador.
+### se le asigna un password temporal a la cuenta reiniciador.
 sudo passwd reiniciador
 
 
@@ -14,7 +14,7 @@ sudo passwd reiniciador
 
 sudo nano /etc/sudoers
 
-###agregar las siguientes lineas en sus bloques correspondientes:
+### agregar las siguientes lineas en sus bloques correspondientes:
 Cmnd_Alias REINICIAR = /sbin/reboot
 reiniciador ALL=(ALL:ALL) NOPASSWD: REINICIAR
 
@@ -22,13 +22,13 @@ reiniciador ALL=(ALL:ALL) NOPASSWD: REINICIAR
 generar la clave publica para la conexión remota por ssh y almacenarla en
 la carpeta "pkey" respetando la nomenclatura en el nombre del archivo.
 
-###genera las llaves . (sin clave)
+### genera las llaves . (sin clave)
 ssh-keygen -t rsa
 
-###copiar la llave publica en el servidor.
+### copiar la llave publica en el servidor.
 ssh-copy-id -i sX.pub reiniciador@xx.xx.xx.xx
 
-###copiar las llaves en la carpeta "pkey"
+### copiar las llaves en la carpeta "pkey"
 cp sX /"dir_script"/pkey
 cp sX.pub /"dir_script"/pkey
 
