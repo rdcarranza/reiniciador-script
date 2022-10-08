@@ -35,6 +35,7 @@ $ ssh-copy-id -i sX.pub reiniciador@xx.xx.xx.xx
 - copiar las llaves en la carpeta "pkey"
 
 $ cp sX /"dir_script"/pkey
+
 $ cp sX.pub /"dir_script"/pkey
 
 4. Se borra el password del usuario reiniciador en el servidor.
@@ -53,7 +54,11 @@ sX:xx.xx.xx.xx
 - Es muy probable que en el NOC se deba montar una maquina virtual en cada estación de trabajo para la instalación y ejecución del script.
 
 - Configuración de permisos:
+
 El directorio /home/reiniciador/.ssh  permisos (700)  --> $sudo chmod 700 /home/reiniciador/.ssh
+
 Las Keys permisos (600)                       --> $sudo chmod 600 ~/.shh/sX
+
 Las Keys permisos (600)                       --> $sudo chmod 600 /"dir_script"/pkey/*.pub
+
 La lista de host conocidos permisos (644)     --> $sudo chmod 644 ~/.shh/known_hosts
