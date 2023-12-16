@@ -1,5 +1,5 @@
 # reiniciador-script
-Script en Bash para el reinicio secuencial de servidores.
+Script en Bash para el reinicio remoto y secuencial de servidores.
 
 ## INSTRUCCIONES:
 1. Se debe crear un usuario de sistema "reiniciador" en cada servidor.
