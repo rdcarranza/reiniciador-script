@@ -2,7 +2,7 @@
 Script en Bash para el reinicio remoto y secuencial de servidores.
 
 ## INSTRUCCIONES:
-1. Se debe crear un usuario de sistema "reiniciador" en cada servidor.
+### 1. Se debe crear un usuario de sistema "reiniciador" en cada servidor.
 
 $ sudo adduser --disabled-password reiniciador
 
@@ -11,7 +11,7 @@ $ sudo adduser --disabled-password reiniciador
 $ sudo passwd reiniciador
 
 
-2. Se le debe asignar el permiso de "reiniciar = /sbin/reboot" en cada servidor al usuario "reiniciador".
+### 2. Se le debe asignar el permiso de "reiniciar = /sbin/reboot" en cada servidor al usuario "reiniciador".
 
 $ sudo nano /etc/sudoers
 
@@ -21,7 +21,7 @@ Cmnd_Alias REINICIAR = /sbin/reboot
 
 reiniciador ALL=(ALL:ALL) NOPASSWD: REINICIAR
 
-3. En el terminal remoto desde donde se va a ejecutar el script, se deben
+### 3. En el terminal remoto desde donde se va a ejecutar el script, se deben
 generar las llaves para la conexión remota por ssh y almacenarla en
 la carpeta "pkey" respetando la nomenclatura en el nombre del archivo.
 
@@ -39,20 +39,18 @@ $ cp sX /"dir_script"/pkey
 
 $ cp sX.pub /"dir_script"/pkey
 
-4. Se borra el password del usuario reiniciador en el servidor.
+### 4. Se borra el password del usuario reiniciador en el servidor.
 
 sudo passwd -d reiniciador
 
 
-5. Se deben cargar la dirección IP del servidor en el archivo sip.conf respetando
+### 5. Se deben cargar la dirección IP del servidor en el archivo sip.conf respetando
 la nomenclatura en la referencia (clave/valor) del nombre y la IP.
 
 sX:xx.xx.xx.xx
 
 ## Recomendaciones:
 - El disco o el directorio donde se almacenará el script, sus archivos y directorios, es recomendable que se encuentren cifrados.
-
-- Es muy probable que en el NOC se deba montar una maquina virtual en cada estación de trabajo para la instalación y ejecución del script.
 
 - Configuración de permisos:
 
